@@ -17,7 +17,7 @@ void	this_is_comment_or_command(char **line)
 	while (**line == '#' && *(*line + 1) != '#')
 	{
 		ft_strdel(line);
-		get_next_line(0, line);
+		get_next_line(g_fd, line);
 	}
 	while (**line == '#' && *(*line + 1) == '#')
 	{
@@ -26,7 +26,7 @@ void	this_is_comment_or_command(char **line)
 		else
 		{
 			ft_strdel(line);
-			get_next_line(0, line);
+			get_next_line(g_fd, line);
 		}
 	}
 }

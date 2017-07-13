@@ -15,11 +15,14 @@
 # include "libft/libft.h"
 
 
+int 				g_fd;
+
 typedef struct		s_room
 {
 	char			*name;
 	int 			x;
 	int 			y;
+	int 			func_room;
 	struct s_room	*next;
 }					t_room;
 
@@ -32,8 +35,11 @@ typedef struct 		s_print
 typedef struct		s_lem
 {
 	int 			ant;
-	t_room			*start;
-	t_room			*end;
+	char 			*room;
+	int 			x_room;
+	int 			y_room;
+	int				start_cnt;
+	int				end_cnt;
 }					t_lem;
 
 t_lem				g_lem_in;

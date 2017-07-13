@@ -21,24 +21,31 @@ char 	*write_name_room(char *line, int len)
 	return (new);
 }
 
-void	add_new_room_in_list(char *room, int x, int y, t_room **head)
+int		add_new_room_in_list(char *room, t_room **head, int func_room)
 {
 	t_room	*tmp;
 
 	tmp = *head;
+	while (tmp)
+	{
+		if (tmp->name == room ||
+				(tmp->x == g_lem_in.x_room && tmp->y == g_lem_in.y_room))
+			return (0);
+		tmp = tmp->next;
+	}
 	tmp = (t_room *)malloc(sizeof(t_room));
 	tmp->name = room;
-	tmp->x = x;
-	tmp->y = y;
+	tmp->x = g_lem_in.x_room;
+	tmp->y = g_lem_in.y_room;
+	tmp->func_room = func_room;
 	tmp->next = (*head);
 	(*head) = tmp;
+	return (1);
 }
 
-int		create_room(char *line, t_room **head)
+int		create_room(char *line, t_room **head, int func_room)
 {
 	int 	cnt;
-	int		x;
-	int 	y;
 	int 	len;
 
 	cnt = 0;
@@ -48,13 +55,15 @@ int		create_room(char *line, t_room **head)
 		return (0);
 	if (ft_isdigit(line[cnt + 1]))
 	{
-		x = ft_atoi(line + (cnt + 1));
-		len = len_value(x);
+		g_lem_in.x_room = ft_atoi(line + (cnt + 1));
+		len = len_value(g_lem_in.x_room);
 		if (line[cnt + len + 1] == 32 && ft_isdigit(line[cnt + len + 2]))
-			y = ft_atoi(line + cnt + len + 1);
+			g_lem_in.y_room = ft_atoi(line + cnt + len + 1);
 		else
 			return (0);
-		add_new_room_in_list(write_name_room(line, cnt), x, y, head);
+		g_lem_in.room = write_name_room(line, cnt);
+		if (!add_new_room_in_list(g_lem_in.room, head, func_room))
+			return (0);
 		write_map(line);
 	}
 	else
@@ -62,22 +71,28 @@ int		create_room(char *line, t_room **head)
 	return (1);
 }
 
-int 	create_start_or_end(char **line)
+int 	create_start_or_end(char **line, t_room **head)
 {
 	int room;
 
 	room = 0;
 	if (ft_strequ(*line + 2, "start"))
+	{
 		room = 1;
+		g_lem_in.start_cnt++;
+	}
 	else if (ft_strequ(*line + 2, "end"))
+	{
 		room = 2;
+		g_lem_in.end_cnt++;
+	}
 	if (room != 0)
 	{
 		write_map(*line);
 		//ft_strdel(line);
-		get_next_line(0, line);
+		get_next_line(g_fd, line);
 		this_is_comment_or_command(line);
-		if (!create_room(*line, room == 1 ? &g_lem_in.start : &g_lem_in.end))
+		if (!create_room(*line, head, room == 1 ? 1 : 2))
 			return (0);
 	}
 	else
@@ -90,20 +105,22 @@ int 	find_room(char *line)
 	t_room	*head;
 
 	line ? ft_strdel(&line) : 0;
-	while (get_next_line(0, &line))
+	while (get_next_line(g_fd, &line))
 	{
 		this_is_comment_or_command(&line);
 		if (ft_isprint(*line) && *line != 'L' && *line != '#' && *line != 32)
 		{
-			if (!create_room(line, &head))
+			if (!create_room(line, &head, 0))
 				return (0);
 		}
 		else if (*line == '#' && *(line + 1) == '#')
 		{
-			if (!create_start_or_end(&line))
+			if (!create_start_or_end(&line, &head))
 				return (0);
 		}
 		ft_strdel(&line);
 	}
+	if (g_lem_in.start_cnt != 1 || g_lem_in.end_cnt != 1)
+		return (0);
 	return (1);
 }

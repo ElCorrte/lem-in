@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <fcntl.h>
 #include "lem-in.h"
 
 int 	error_mes(void)
@@ -52,12 +53,15 @@ int		valid_map(void)
 	char *line;
 
 	line = NULL;
-	while (get_next_line(0, &line))
+	g_fd = open("map", O_RDONLY);
+	while (get_next_line(g_fd, &line))
 	{
 		if (!g_lem_in.ant)
+		{
 			if (!num_ants(line))
 				return (0);
-		else if (!find_room(line))
+		}
+		if (!find_room(line))
 			return (0);
 		ft_strdel(&line);
 	}
