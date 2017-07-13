@@ -50,8 +50,10 @@ void	print_map(void)
 
 int		valid_map(void)
 {
-	char *line;
+	char 	*line;
+	t_room	*head;
 
+	head = NULL;
 	line = NULL;
 	g_fd = open("map", O_RDONLY);
 	while (get_next_line(g_fd, &line))
@@ -61,7 +63,7 @@ int		valid_map(void)
 			if (!num_ants(line))
 				return (0);
 		}
-		if (!find_room(line))
+		if (!find_room(line, head))
 			return (0);
 		ft_strdel(&line);
 	}

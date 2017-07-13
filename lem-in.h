@@ -47,7 +47,7 @@ t_lem				g_lem_in;
 t_print				*g_head;
 t_print				*g_end;
 
-int 				find_room(char *line);
+int 				find_room(char *line, t_room *head);
 int 				num_ants(char *line);
 void				this_is_comment_or_command(char **line);
 void				write_map(char *line);
