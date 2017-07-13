@@ -1,0 +1,16 @@
+#bla
+#bla
+##bla
+3
+##start
+room_1 3 1
+room_2 1 7
+#comment
+room_3 16 3
+room_4 16 5
+room_5 9 3
+room_6 1 5
+room_7 4 8
+##end
+room_0 9 5
+
