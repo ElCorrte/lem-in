@@ -12,6 +12,22 @@
 
 #include "lem-in.h"
 
+int 	valid_line_room(char *line)
+{
+	size_t	len_line;
+	size_t	len_room;
+	int 	len_x;
+	int 	len_y;
+
+	len_line = ft_strlen(line);
+	len_room = ft_strlen(g_lem_in.room);
+	len_x = len_value(g_lem_in.x_room);
+	len_y = len_value(g_lem_in.y_room);
+	if (len_line > len_room + len_x + len_y + 2)
+		return (0);
+	return (1);
+}
+
 void	this_is_comment_or_command(char **line)
 {
 	while (**line == '#' && *(*line + 1) != '#')
@@ -33,15 +49,17 @@ void	this_is_comment_or_command(char **line)
 
 int 	num_ants(char *line)
 {
-	intmax_t len;
+	intmax_t	ant;
+	int 		len;
 
 	this_is_comment_or_command(&line);
 	if (!ft_isdigit(*line))
 		return (0);
 	else
 	{
-		len = ft_atoi_pf(line);
-		if (len > 2147483647)
+		ant = ft_atoi_pf(line);
+		len = len_value(ant);
+		if (ant > 2147483647 || ft_isprint(line[len]))
 			return (0);
 		g_lem_in.ant = ft_atoi(line);
 		write_map(line);

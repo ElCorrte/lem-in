@@ -63,6 +63,8 @@ int		create_room(char *line, t_room **head, int func_room)
 			g_lem_in.y_room = ft_atoi(line + cnt + len + 1);
 		else
 			return (0);
+		if (!valid_line_room(line))
+			return (0);
 		if (!add_new_room_in_list(g_lem_in.room, head, func_room))
 			return (0);
 		write_map(line);
@@ -90,7 +92,6 @@ int 	create_start_or_end(char **line, t_room **head)
 	if (room != 0)
 	{
 		write_map(*line);
-		//ft_strdel(line);
 		get_next_line(g_fd, line);
 		this_is_comment_or_command(line);
 		if (!create_room(*line, head, room == 1 ? 1 : 2))
@@ -113,10 +114,8 @@ int 	find_room(char *line, t_room *head)
 				return (0);
 		}
 		else if (*line == '#' && *(line + 1) == '#')
-		{
 			if (!create_start_or_end(&line, &head))
 				return (0);
-		}
 		ft_strdel(&line);
 	}
 	if (g_lem_in.start_cnt != 1 || g_lem_in.end_cnt != 1)
