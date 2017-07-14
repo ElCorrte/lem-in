@@ -52,5 +52,6 @@ int 				num_ants(char *line);
 void				this_is_comment_or_command(char **line);
 void				write_map(char *line);
 int					valid_line_room(char *line);
+int					find_link(char *line);
 
 #endif

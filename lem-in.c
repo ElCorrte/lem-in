@@ -65,6 +65,8 @@ int		valid_map(void)
 		}
 		if (!find_room(line, head))
 			return (0);
+		if (!find_link(line))
+			return (0);
 		ft_strdel(&line);
 	}
 	print_map();
