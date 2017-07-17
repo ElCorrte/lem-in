@@ -11,3 +11,5 @@ room_6 1 1
 room_7 4 8
 ##end
 room_0 9 5
+room_1-room_2
+room_2-room_0

@@ -19,15 +19,15 @@
 # include <stdlib.h>
 # include "../libft.h"
 
-# define RC "\x1B[0m"
+# define RESET		"\e[0m"
 
-# define RED "\x1B[31m"
-# define GRN "\x1B[32m"
-# define YEL "\x1B[33m"
-# define BLU "\x1B[34m"
-# define MAG "\x1B[35m"
-# define CYN "\x1B[36m"
-# define WHT "\x1B[37m"
+# define RED		"\e[31m"
+# define GREEN		"\e[92m"
+# define YELLOW		"\e[93m"
+# define BLUE		"\e[34m"
+# define MAGENTA	"\e[95m"
+# define CYAN 		"\e[96m"
+# define BLINK		"\e[5m"
 
 typedef struct		s_pf
 {

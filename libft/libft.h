@@ -30,7 +30,6 @@ char				*ft_strncpy(char *dst, const char *src, size_t len);
 char				*ft_strcat(char *dst, const char *src);
 char				*ft_strncat(char *dst, const char *src, size_t n);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
-char				*ft_strstr(const char *big, const char *little);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);

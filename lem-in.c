@@ -15,7 +15,7 @@
 
 int 	error_mes(void)
 {
-	ft_printf("ERROR\n");
+	ft_printf(BLINK RED"ERROR\n"RESET);
 	return (0);
 }
 
@@ -43,7 +43,7 @@ void	print_map(void)
 	tmp = g_head;
 	while (tmp)
 	{
-		ft_printf("%s\n", tmp->print_line);
+		ft_printf(YELLOW"%s\n"RESET, tmp->print_line);
 		tmp = tmp->next;
 	}
 }
@@ -51,9 +51,11 @@ void	print_map(void)
 int		valid_map(void)
 {
 	char 	*line;
-	t_room	*head;
+	t_room	*head_room;
+	t_link	*head_link;
 
-	head = NULL;
+	head_room = NULL;
+	head_link = NULL;
 	line = NULL;
 	g_fd = open("map", O_RDONLY);
 	while (get_next_line(g_fd, &line))
@@ -63,9 +65,9 @@ int		valid_map(void)
 			if (!num_ants(line))
 				return (0);
 		}
-		if (!find_room(line, head))
+		if (!find_room(&line, head_room) && ! g_lem_in.room_completed)
 			return (0);
-		if (!find_link(line))
+		if (!find_link(line, head_link))
 			return (0);
 		ft_strdel(&line);
 	}

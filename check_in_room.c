@@ -12,13 +12,13 @@
 
 #include "lem-in.h"
 
-int		write_name_room(char *line, int *cnt)
+int		write_name_room_or_link(char *line, int *cnt, int c, char **room)
 {
-	while (ft_isprint(line[*cnt]) && line[*cnt] != 32)
+	while (ft_isprint(line[*cnt]) && line[*cnt] != c)
 		(*cnt)++;
-	g_lem_in.room = ft_strnew((size_t)*cnt);
-	ft_strncpy(g_lem_in.room, line, (size_t)*cnt);
-	if (ft_strchr(g_lem_in.room, '-'))
+	*room = ft_strnew((size_t)*cnt);
+	ft_strncpy(*room, line, (size_t)*cnt);
+	if (ft_strchr(*room, '-'))
 		return (0);
 	return (1);
 }
@@ -51,7 +51,7 @@ int		create_room(char *line, t_room **head, int func_room)
 	int 	len;
 
 	cnt = 0;
-	if (!write_name_room(line, &cnt))
+	if (!write_name_room_or_link(line, &cnt, 32, &g_lem_in.room))
 		return (0);
 	if ((ft_isdigit(line[cnt + 1])) ||
 			(line[cnt + 1] == '-' && ft_isdigit(line[cnt + 2])))
@@ -102,21 +102,26 @@ int 	create_start_or_end(char **line, t_room **head)
 	return (1);
 }
 
-int 	find_room(char *line, t_room *head)
+int 	find_room(char **line, t_room *head)
 {
-	line ? ft_strdel(&line) : 0;
-	while (get_next_line(g_fd, &line))
+	line ? ft_strdel(line) : 0;
+	while (get_next_line(g_fd, line))
 	{
-		this_is_comment_or_command(&line);
-		if (ft_isprint(*line) && *line != 'L' && *line != '#' && *line != 32)
+		if (maybe_link(*line))
 		{
-			if (!create_room(line, &head, 0))
+			g_lem_in.room_completed = 1;
+			return (1);
+		}
+		this_is_comment_or_command(line);
+		if (ft_isprint(**line) && **line != 'L' && **line != '#' && **line != 32)
+		{
+			if (!create_room(*line, &head, 0))
 				return (0);
 		}
-		else if (*line == '#' && *(line + 1) == '#')
-			if (!create_start_or_end(&line, &head))
+		else if (**line == '#' && *(*line + 1) == '#')
+			if (!create_start_or_end(line, &head))
 				return (0);
-		ft_strdel(&line);
+		ft_strdel(line);
 	}
 	if (g_lem_in.start_cnt != 1 || g_lem_in.end_cnt != 1)
 		return (0);
