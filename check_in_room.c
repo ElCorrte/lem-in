@@ -67,7 +67,7 @@ int		create_room(char *line, t_room **head, int func_room)
 			return (0);
 		if (!add_new_room_in_list(g_lem_in.room, head, func_room))
 			return (0);
-		write_map(line);
+		write_map(line, 3);
 	}
 	else
 		return (0);
@@ -89,11 +89,11 @@ int 	create_start_or_end(char **line, t_room **head)
 		room = 2;
 		g_lem_in.end_cnt++;
 	}
+	write_map(*line, 1);
+	get_next_line(g_fd, line);
+	this_is_comment_or_command(line);
 	if (room != 0)
 	{
-		write_map(*line);
-		get_next_line(g_fd, line);
-		this_is_comment_or_command(line);
 		if (!create_room(*line, head, room == 1 ? 1 : 2))
 			return (0);
 	}
@@ -102,7 +102,7 @@ int 	create_start_or_end(char **line, t_room **head)
 	return (1);
 }
 
-int 	find_room(char **line, t_room *head)
+int 	find_room(char **line, t_room **head)
 {
 	line ? ft_strdel(line) : 0;
 	while (get_next_line(g_fd, line))
@@ -112,18 +112,21 @@ int 	find_room(char **line, t_room *head)
 			g_lem_in.room_completed = 1;
 			return (1);
 		}
-		this_is_comment_or_command(line);
+		if (!this_is_comment_or_command(line))
+			return (0);
 		if (ft_isprint(**line) && **line != 'L' && **line != '#' && **line != 32)
 		{
-			if (!create_room(*line, &head, 0))
+			if (!create_room(*line, head, 0))
 				return (0);
 		}
 		else if (**line == '#' && *(*line + 1) == '#')
-			if (!create_start_or_end(line, &head))
+		{
+			if (!create_start_or_end(line, head))
 				return (0);
+			if (g_lem_in.start_cnt > 1 || g_lem_in.end_cnt > 1)
+				return (0);
+		}
 		ft_strdel(line);
 	}
-	if (g_lem_in.start_cnt != 1 || g_lem_in.end_cnt != 1)
-		return (0);
 	return (1);
 }

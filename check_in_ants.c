@@ -28,23 +28,29 @@ int 	valid_line_room(char *line)
 	return (1);
 }
 
-void	this_is_comment_or_command(char **line)
+int		this_is_comment_or_command(char **line)
 {
 	while (**line == '#' && *(*line + 1) != '#')
 	{
+		write_map(*line, 4);
 		ft_strdel(line);
 		get_next_line(g_fd, line);
 	}
 	while (**line == '#' && *(*line + 1) == '#')
 	{
 		if (!ft_strcmp(*line + 2, "start") || (!ft_strcmp(*line + 2, "end")))
-			return ;
+		{
+			return (g_lem_in.start_cnt == 1 && g_lem_in.end_cnt == 1 ? 0 : 1);
+		}
 		else
 		{
+			write_map(*line, 1);
 			ft_strdel(line);
-			get_next_line(g_fd, line);
+			if (!get_next_line(g_fd, line))
+				return (1);
 		}
 	}
+	return (1);
 }
 
 int 	num_ants(char *line)
@@ -52,7 +58,8 @@ int 	num_ants(char *line)
 	intmax_t	ant;
 	int 		len;
 
-	this_is_comment_or_command(&line);
+	if (!this_is_comment_or_command(&line))
+		return (0);
 	if (!ft_isdigit(*line))
 		return (0);
 	else
@@ -62,7 +69,7 @@ int 	num_ants(char *line)
 		if (ant > 2147483647 || ft_isprint(line[len]))
 			return (0);
 		g_lem_in.ant = ft_atoi(line);
-		write_map(line);
+		write_map(line, 2);
 	}
 	return (1);
 }

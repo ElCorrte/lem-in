@@ -15,16 +15,17 @@
 
 int 	error_mes(void)
 {
-	ft_printf(BLINK RED"ERROR\n"RESET);
+	ft_printf(RED"ERROR\n"RESET);
 	return (0);
 }
 
-void	write_map(char *line)
+void	write_map(char *line, int color)
 {
 	t_print *tmp;
 
 	tmp = (t_print *)malloc(sizeof(t_print));
 	tmp->print_line = ft_strdup(line);
+	tmp->color = color;
 	tmp->next = NULL;
 	if (g_head == NULL)
 	{
@@ -43,7 +44,10 @@ void	print_map(void)
 	tmp = g_head;
 	while (tmp)
 	{
-		ft_printf(YELLOW"%s\n"RESET, tmp->print_line);
+		tmp->color == 1 ? ft_printf(RED"%s\n"RESET, tmp->print_line) : 0;
+		tmp->color == 2 ? ft_printf(YELLOW"%s\n"RESET, tmp->print_line) : 0;
+		tmp->color == 3 ? ft_printf(BLUE"%s\n"RESET, tmp->print_line) : 0;
+		tmp->color == 4 ? ft_printf(GREEN"%s\n"RESET, tmp->print_line) : 0;
 		tmp = tmp->next;
 	}
 }
@@ -65,11 +69,11 @@ int		valid_map(void)
 			if (!num_ants(line))
 				return (0);
 		}
-		if (!find_room(&line, head_room) && ! g_lem_in.room_completed)
+		if (!g_lem_in.room_completed &&!find_room(&line, &head_room))
 			return (0);
-		if (!find_link(line, head_link))
+		if (!find_link(&line, &head_link, head_room))
 			return (0);
-		ft_strdel(&line);
+		line ? ft_strdel(&line) : 0;
 	}
 	print_map();
 	return (1);

@@ -35,6 +35,7 @@ typedef struct		s_link
 typedef struct 		s_print
 {
 	char 			*print_line;
+	int 			color;
 	struct s_print	*next;
 }					t_print;
 
@@ -54,14 +55,18 @@ t_lem				g_lem_in;
 t_print				*g_head;
 t_print				*g_end;
 
-int 				find_room(char **line, t_room *head);
-int 				num_ants(char *line);
-void				this_is_comment_or_command(char **line);
-void				write_map(char *line);
+int 				find_room(char **line, t_room **head);
 int					valid_line_room(char *line);
-int					find_link(char *line, t_link *head);
+int					maybe_link(char *line);
+
+int					find_link(char **line, t_link **head, t_room *head_room);
+
+int 				num_ants(char *line);
+int					this_is_comment_or_command(char **line);
+
+void				write_map(char *line, int color);
+
 int					write_name_room_or_link(char *line, int *cnt, int c,\
 					char **room);
-int					maybe_link(char *line);
 
 #endif
