@@ -1,16 +1,25 @@
-2147648
+3
 ##start
-room_1 23 3
-room_2 16 7
+start 23 3
+2 16 7
 #comment
-room_3 -16 -1
-room_4 -16 -2
-room_d 1 5
-room_5 9 3
-room_6 1 1
-room_7 4 8
-#one_command
+3 16 3
+4 16 5
+5 9 3
+6 1 5
+7 4 8
 ##end
-room_0 9 5
-room_1-room_7
-room_2-room_0
+end 9 5
+end-4
+end-6
+start-3
+4-3
+5-2
+3-5
+#another comment
+4-2
+2-start
+7-6
+7-2
+7-4
+6-5

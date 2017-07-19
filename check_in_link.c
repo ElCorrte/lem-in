@@ -72,7 +72,7 @@ int		create_link(char *line, t_room *head_room, t_link **head_link)
 		return (0);
 	cnt += 1;
 	room_2 = ft_strnew(len - cnt);
-	ft_strncpy(room_2, line + cnt, (size_t)cnt);
+	ft_strncpy(room_2, line + cnt, (size_t)len - cnt);
 	if (!valid_link(room_1, room_2, head_room))
 		return (0);
 	write_links_in_list(room_1, room_2, head_link);
