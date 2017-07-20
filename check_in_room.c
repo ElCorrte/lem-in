@@ -89,11 +89,11 @@ int 	create_start_or_end(char **line, t_room **head)
 		room = 2;
 		g_lem_in.end_cnt++;
 	}
-	write_map(*line, 1);
-	get_next_line(g_fd, line);
-	this_is_comment_or_command(line);
 	if (room != 0)
 	{
+		write_map(*line, 1);
+		get_next_line(g_fd, line);
+		this_is_comment_or_command(line);
 		if (!create_room(*line, head, room == 1 ? 1 : 2))
 			return (0);
 	}
@@ -109,6 +109,8 @@ int 	find_room(char **line, t_room **head)
 	{
 		if (maybe_link(*line))
 		{
+			if (g_lem_in.start_cnt != 1 || g_lem_in.end_cnt != 1)
+				return (0);
 			g_lem_in.room_completed = 1;
 			return (1);
 		}
@@ -122,8 +124,6 @@ int 	find_room(char **line, t_room **head)
 		else if (**line == '#' && *(*line + 1) == '#')
 		{
 			if (!create_start_or_end(line, head))
-				return (0);
-			if (g_lem_in.start_cnt > 1 || g_lem_in.end_cnt > 1)
 				return (0);
 		}
 		ft_strdel(line);

@@ -28,6 +28,7 @@
 # define MAGENTA	"\e[95m"
 # define CYAN 		"\e[96m"
 # define BLINK		"\e[5m"
+# define UNDERLINED	"\e[4m"
 
 typedef struct		s_pf
 {

@@ -22,8 +22,15 @@ typedef struct		s_room
 	int 			x;
 	int 			y;
 	int 			func_room;
+	struct s_join	*join;
 	struct s_room	*next;
 }					t_room;
+
+typedef struct		s_join
+{
+	t_room			*room;
+	struct s_join	*next;
+}					t_join;
 
 typedef struct		s_link
 {
@@ -58,9 +65,7 @@ t_print				*g_end;
 int 				find_room(char **line, t_room **head);
 int					valid_line_room(char *line);
 int					maybe_link(char *line);
-
 int					find_link(char **line, t_link **head, t_room *head_room);
-
 int 				num_ants(char *line);
 int					this_is_comment_or_command(char **line);
 
@@ -68,5 +73,8 @@ void				write_map(char *line, int color);
 
 int					write_name_room_or_link(char *line, int *cnt, int c,\
 					char **room);
+
+int					build_links(t_room **room, t_link *link);
+void				clear_struct(void);
 
 #endif
