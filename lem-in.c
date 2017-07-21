@@ -109,6 +109,7 @@ int 	main(void)
 		return (error_mes());
 	build_links(&head_room, head_link);
 	print_link(head_room);
-	find_the_shortest_path(&head_room);
+	find_the_shortest_path(head_room);
+	write_the_shortest_path(head_room);
 	return (0);
 }

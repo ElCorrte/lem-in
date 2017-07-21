@@ -21,4 +21,5 @@ void	clear_struct(void)
 	g_lem_in.start_cnt = 0;
 	g_lem_in.end_cnt = 0;
 	g_lem_in.room_completed = 0;
+	g_lem_in.new_room = 0;
 }

@@ -12,7 +12,7 @@
 
 #include "lem-in.h"
 
-size_t number_room(t_room *room)
+size_t	number_room(t_room *room)
 {
 	size_t cnt;
 
@@ -25,43 +25,53 @@ size_t number_room(t_room *room)
 	return (cnt);
 }
 
-void 	write_number(int  **number, int *cnt, t_room **room)
+void 	write_number(int *number, t_room *room, int distance)
 {
-	*cnt != 1 ? (*cnt)++ : 0;
-	(*room)->this_is = *cnt;
-	*number[*cnt] = (*room)->this_is;
+	static int this_is;
+
+	if (room->i_was_here == 1)
+		return ;
+	room->this_is = this_is++;
+	room->i_was_here = 1;
+	room->distance = room->func_room == 1 ? 0 : (distance + 1);
+	number[g_lem_in.cnt] = room->this_is;
+	g_lem_in.cnt++;
 }
 
-int 	find_the_shortest_path(t_room **room)
+void	write_join(int *number, t_join *join, int distance)
+{
+	while (join)
+	{
+		write_number(number, join->room, distance);
+		join = join->next;
+	}
+}
+
+int 	find_the_shortest_path(t_room *room)
 {
 	t_room	*tmp;
 	int 	*number;
 	int 	cnt;
 
-	cnt = 1;
-	tmp = *room;
-	number = ft_memalloc(number_room(*room));
-	while (*room)
+	cnt = 0;
+	tmp = room;
+	number = ft_memalloc(number_room(room));
+	while (tmp->func_room != 1)
+		tmp = tmp->next;
+	write_number(number, tmp, tmp->distance);
+	tmp = room;
+	while (tmp)
 	{
-		if ((*room)->func_room == 1)
+		g_lem_in.new_room = 0;
+		if (tmp->this_is == number[cnt])
 		{
-			write_number(&number, &cnt, room);
-			*room = tmp;
-			break ;
+			ft_printf("room = %s - number = %i\n", tmp->name, number[cnt]);
+			write_join(number, tmp->join, tmp->distance);
+			g_lem_in.new_room = 1;
+			cnt++;
 		}
-		(*room) = (*room)->next;
-	}
-	while (*room)
-	{
-		if ((*room)->this_is == number[cnt])
-		{
-			while ((*room)->join)
-			{
-				write_number(&number, &cnt, room);
-				(*room)->join = (*room)->join->next;
-			}
-		}
-		(*room) = (*room)->next;
+		tmp = tmp->next;
+		g_lem_in.new_room == 1 ? tmp = room : 0;
 	}
 	return (0);
 }

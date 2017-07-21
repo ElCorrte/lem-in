@@ -23,6 +23,8 @@ typedef struct		s_room
 	int 			y;
 	int 			func_room;
 	int 			this_is;
+	int 			i_was_here;
+	int 			distance;
 	struct s_join	*join;
 	struct s_room	*next;
 }					t_room;
@@ -47,6 +49,12 @@ typedef struct 		s_print
 	struct s_print	*next;
 }					t_print;
 
+typedef struct		s_path
+{
+	char 			*name;
+	struct s_path	*next;
+}					t_path;
+
 typedef struct		s_lem
 {
 	int 			ant;
@@ -57,12 +65,15 @@ typedef struct		s_lem
 	int				start_cnt;
 	int				end_cnt;
 	int 			room_completed;
+	int 			new_room;
 }					t_lem;
 
 t_lem				g_lem_in;
 
 t_print				*g_head;
 t_print				*g_end;
+
+t_path				*g_start_path;
 
 int 				find_room(char **line, t_room **head);
 int					valid_line_room(char *line);
@@ -77,7 +88,8 @@ int					write_name_room_or_link(char *line, int *cnt, int c,\
 					char **room);
 
 int					build_links(t_room **room, t_link *link);
-int 				find_the_shortest_path(t_room **room);
+int 				find_the_shortest_path(t_room *room);
+void				write_the_shortest_path(t_room *room);
 void				clear_struct(void);
 
 #endif
