@@ -40,6 +40,7 @@ int		add_new_room_in_list(char *room, t_room **head, int func_room)
 	tmp->x = g_lem_in.x_room;
 	tmp->y = g_lem_in.y_room;
 	tmp->func_room = func_room;
+	tmp->join = NULL;
 	tmp->next = (*head);
 	(*head) = tmp;
 	return (1);

@@ -22,6 +22,7 @@ typedef struct		s_room
 	int 			x;
 	int 			y;
 	int 			func_room;
+	int 			this_is;
 	struct s_join	*join;
 	struct s_room	*next;
 }					t_room;
@@ -49,6 +50,7 @@ typedef struct 		s_print
 typedef struct		s_lem
 {
 	int 			ant;
+	int 			cnt;
 	char 			*room;
 	int 			x_room;
 	int 			y_room;
@@ -75,6 +77,7 @@ int					write_name_room_or_link(char *line, int *cnt, int c,\
 					char **room);
 
 int					build_links(t_room **room, t_link *link);
+int 				find_the_shortest_path(t_room **room);
 void				clear_struct(void);
 
 #endif

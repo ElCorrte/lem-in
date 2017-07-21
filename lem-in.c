@@ -79,15 +79,18 @@ int		valid_map(t_room **head_room, t_link **head_link)
 
 void	print_link(t_room *room)
 {
+	t_join *tmp;
+
 	while (room)
 	{
 		ft_printf("room ");
 		ft_printf(RED"[%-5s] "RESET, room->name);
 		ft_printf("linked with rooms ");
-		while (room->join)
+		tmp = room->join;
+		while (tmp)
 		{
-			ft_printf(BLUE"[%s]  "RESET, room->join->room->name);
-			room->join = room->join->next;
+			ft_printf(BLUE"[%s]  "RESET, tmp->room->name);
+			tmp = tmp->next;
 		}
 		room = room->next;
 		ft_printf("\n");
@@ -106,5 +109,6 @@ int 	main(void)
 		return (error_mes());
 	build_links(&head_room, head_link);
 	print_link(head_room);
+	find_the_shortest_path(&head_room);
 	return (0);
 }

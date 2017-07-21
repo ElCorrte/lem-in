@@ -45,7 +45,6 @@ void	choice_room(t_room **main_room, t_room *head_room, char *room)
 int 	build_links(t_room **room, t_link *link)
 {
 	t_room	*tmp_start;
-	t_room	*tmp_r2;
 	t_link	*tmp_l;
 
 	tmp_start = *room;

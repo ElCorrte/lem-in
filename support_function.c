@@ -15,6 +15,7 @@
 void	clear_struct(void)
 {
 	g_lem_in.ant = 0;
+	g_lem_in.cnt = 0;
 	g_lem_in.x_room = 0;
 	g_lem_in.y_room = 0;
 	g_lem_in.start_cnt = 0;
