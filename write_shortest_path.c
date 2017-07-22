@@ -16,11 +16,17 @@ void	create_path(char *name)
 {
 	t_path *tmp;
 
-	tmp = g_start_path;
 	tmp = (t_path *)malloc(sizeof(t_path));
 	tmp->name = ft_strdup(name);
-	tmp->next = g_start_path;
-	g_start_path = tmp;
+	tmp->next = NULL;
+	if (g_start_path == NULL)
+	{
+		g_start_path = tmp;
+		g_end_path = tmp;
+		return ;
+	}
+	g_end_path->next = tmp;
+	g_end_path = tmp;
 }
 
 t_room	*find_min_join(t_join *join, int distance)
@@ -38,17 +44,21 @@ t_room	*find_min_join(t_join *join, int distance)
 
 void	write_the_shortest_path(t_room *room)
 {
-	t_room *tmp;
+	t_room	*tmp;
+	t_path	*path;
+	t_join	*join;
 
 	tmp = room;
+	join = tmp->join;
 	while (tmp->func_room != 2)
 		tmp = tmp->next;
 	create_path(tmp->name);
 	while (tmp->next != NULL)
-		tmp = find_min_join(tmp->join, tmp->distance);
-	while (g_start_path)
+		tmp = find_min_join(join, tmp->distance);
+	path = g_start_path;
+	while (path)
 	{
-		ft_printf("[%s] ", g_start_path->name);
-		g_start_path = g_start_path->next;
+		ft_printf("[%s] ", path->name);
+		path = path->next;
 	}
 }

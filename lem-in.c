@@ -111,5 +111,7 @@ int 	main(void)
 	print_link(head_room);
 	find_the_shortest_path(head_room);
 	write_the_shortest_path(head_room);
+	start_ants();
+	while (1);
 	return (0);
 }

@@ -52,6 +52,7 @@ typedef struct 		s_print
 typedef struct		s_path
 {
 	char 			*name;
+	int 			ant_came;
 	struct s_path	*next;
 }					t_path;
 
@@ -74,6 +75,7 @@ t_print				*g_head;
 t_print				*g_end;
 
 t_path				*g_start_path;
+t_path				*g_end_path;
 
 int 				find_room(char **line, t_room **head);
 int					valid_line_room(char *line);
@@ -81,15 +83,17 @@ int					maybe_link(char *line);
 int					find_link(char **line, t_link **head, t_room *head_room);
 int 				num_ants(char *line);
 int					this_is_comment_or_command(char **line);
-
-void				write_map(char *line, int color);
-
 int					write_name_room_or_link(char *line, int *cnt, int c,\
 					char **room);
 
 int					build_links(t_room **room, t_link *link);
+
 int 				find_the_shortest_path(t_room *room);
 void				write_the_shortest_path(t_room *room);
+
+void				start_ants(void);
+
+void				write_map(char *line, int color);
 void				clear_struct(void);
 
 #endif

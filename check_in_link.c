@@ -68,6 +68,7 @@ int		create_link(char *line, t_room *head_room, t_link **head_link)
 
 	cnt = 0;
 	len = ft_strlen(line);
+	room_1 = NULL;
 	if (!write_name_room_or_link(line, &cnt, '-', &room_1))
 		return (0);
 	cnt += 1;
@@ -77,6 +78,8 @@ int		create_link(char *line, t_room *head_room, t_link **head_link)
 		return (0);
 	write_links_in_list(room_1, room_2, head_link);
 	write_map(line, 2);
+	ft_strdel(&room_1);
+	ft_strdel(&room_2);
 	return (1);
 }
 

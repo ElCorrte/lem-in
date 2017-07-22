@@ -16,6 +16,7 @@ int		write_name_room_or_link(char *line, int *cnt, int c, char **room)
 {
 	while (ft_isprint(line[*cnt]) && line[*cnt] != c)
 		(*cnt)++;
+	*room != NULL ? ft_strdel(room) : 0;
 	*room = ft_strnew((size_t)*cnt);
 	ft_strncpy(*room, line, (size_t)*cnt);
 	if (ft_strchr(*room, '-'))
@@ -96,6 +97,7 @@ int 	create_start_or_end(char **line, t_room **head)
 	if (room != 0)
 	{
 		write_map(*line, 1);
+		ft_strdel(line);
 		get_next_line(g_fd, line);
 		this_is_comment_or_command(line);
 		if (!create_room(*line, head, room == 1 ? 1 : 2))
