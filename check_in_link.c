@@ -12,10 +12,10 @@
 
 #include "lem-in.h"
 
-int 	maybe_link(char *line)
+int		maybe_link(char *line)
 {
-	int cnt;
-	int dash;
+	int		cnt;
+	int		dash;
 
 	cnt = 0;
 	dash = 0;
@@ -33,10 +33,10 @@ int 	maybe_link(char *line)
 	return (0);
 }
 
-int 	valid_link(char *room1, char *room2, t_room *head_room)
+int		valid_link(char *room1, char *room2, t_room *head_room)
 {
 	t_room	*tmp;
-	int 	i;
+	int		i;
 
 	i = 0;
 	tmp = head_room;
@@ -50,7 +50,7 @@ int 	valid_link(char *room1, char *room2, t_room *head_room)
 
 void	write_links_in_list(char *room1, char *room2, t_link **head_link)
 {
-	t_link *tmp;
+	t_link	*tmp;
 
 	tmp = (t_link *)malloc(sizeof(t_link));
 	tmp->room_1 = ft_strdup(room1);

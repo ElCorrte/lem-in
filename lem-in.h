@@ -54,6 +54,7 @@ typedef struct		s_path
 	char 			*name;
 	int 			ant_came;
 	struct s_path	*next;
+	struct s_path	*prev;
 }					t_path;
 
 typedef struct		s_lem
@@ -67,6 +68,7 @@ typedef struct		s_lem
 	int				end_cnt;
 	int 			room_completed;
 	int 			new_room;
+	int 			len_room;
 }					t_lem;
 
 t_lem				g_lem_in;
@@ -95,5 +97,6 @@ void				start_ants(void);
 
 void				write_map(char *line, int color);
 void				clear_struct(void);
+int					len_path(void);
 
 #endif

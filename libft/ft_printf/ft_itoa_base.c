@@ -17,7 +17,7 @@ int		len_value(intmax_t value)
 	int i;
 
 	i = 0;
-	value < 0 ? i++ : 0;
+	value <= 0 ? i++ : 0;
 	while (value != 0)
 	{
 		value /= 10;

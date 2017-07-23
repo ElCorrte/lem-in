@@ -25,7 +25,7 @@ size_t	number_room(t_room *room)
 	return (cnt);
 }
 
-void 	write_number(int *number, t_room *room, int distance)
+void	write_number(int *number, t_room *room, int distance)
 {
 	static int this_is;
 
@@ -47,11 +47,11 @@ void	write_join(int *number, t_join *join, int distance)
 	}
 }
 
-int 	find_the_shortest_path(t_room *room)
+int		find_the_shortest_path(t_room *room)
 {
 	t_room	*tmp;
-	int 	*number;
-	int 	cnt;
+	int		*number;
+	int		cnt;
 
 	cnt = 0;
 	tmp = room;

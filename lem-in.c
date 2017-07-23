@@ -58,8 +58,8 @@ int		valid_map(t_room **head_room, t_link **head_link)
 	char 	*line;
 
 	line = NULL;
-	g_fd = open("map", O_RDONLY);
-//	g_fd = 0;
+	//g_fd = open("map", O_RDONLY);
+	g_fd = 0;
 	while (get_next_line(g_fd, &line))
 	{
 		if (!g_lem_in.ant)
@@ -112,6 +112,6 @@ int 	main(void)
 	find_the_shortest_path(head_room);
 	write_the_shortest_path(head_room);
 	start_ants();
-	while (1);
+	//while (1);
 	return (0);
 }

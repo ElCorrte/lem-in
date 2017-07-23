@@ -52,8 +52,8 @@ int		add_new_room_in_list(char *room, t_room **head, int func_room)
 
 int		create_room(char *line, t_room **head, int func_room)
 {
-	int 	cnt;
-	int 	len;
+	int		cnt;
+	int		len;
 
 	cnt = 0;
 	if (!write_name_room_or_link(line, &cnt, 32, &g_lem_in.room))
@@ -79,9 +79,9 @@ int		create_room(char *line, t_room **head, int func_room)
 	return (1);
 }
 
-int 	create_start_or_end(char **line, t_room **head)
+int		create_start_or_end(char **line, t_room **head)
 {
-	int room;
+	int		room;
 
 	room = 0;
 	if (ft_strequ(*line + 2, "start"))
@@ -108,7 +108,7 @@ int 	create_start_or_end(char **line, t_room **head)
 	return (1);
 }
 
-int 	find_room(char **line, t_room **head)
+int		find_room(char **line, t_room **head)
 {
 	line ? ft_strdel(line) : 0;
 	while (get_next_line(g_fd, line))
@@ -122,7 +122,7 @@ int 	find_room(char **line, t_room **head)
 		}
 		if (!this_is_comment_or_command(line))
 			return (0);
-		if (ft_isprint(**line) && **line != 'L' && **line != '#' && **line != 32)
+		if (ft_isprint(**line) && **line != 'L' && **line != 35 && **line != 32)
 		{
 			if (!create_room(*line, head, 0))
 				return (0);

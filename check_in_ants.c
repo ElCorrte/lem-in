@@ -12,12 +12,12 @@
 
 #include "lem-in.h"
 
-int 	valid_line_room(char *line)
+int		valid_line_room(char *line)
 {
 	size_t	len_line;
 	size_t	len_room;
-	int 	len_x;
-	int 	len_y;
+	int		len_x;
+	int		len_y;
 
 	len_line = ft_strlen(line);
 	len_room = ft_strlen(g_lem_in.room);
@@ -53,10 +53,10 @@ int		this_is_comment_or_command(char **line)
 	return (1);
 }
 
-int 	num_ants(char *line)
+int		num_ants(char *line)
 {
 	intmax_t	ant;
-	int 		len;
+	int			len;
 
 	if (!this_is_comment_or_command(&line))
 		return (0);
