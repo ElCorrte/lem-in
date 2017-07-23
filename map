@@ -1,0 +1,17 @@
+5
+##start
+start 0 1
+##end
+end 100 100
+0 94 66
+2 39 31
+4 35 24
+5 52 42
+4-0
+start-4
+start-2
+start-5
+start-4
+end-2
+end-5
+end-0

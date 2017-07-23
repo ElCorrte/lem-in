@@ -83,7 +83,7 @@ int 				find_room(char **line, t_room **head);
 int					valid_line_room(char *line);
 int					maybe_link(char *line);
 int					find_link(char **line, t_link **head, t_room *head_room);
-int 				num_ants(char *line);
+int 				num_ants(char **line);
 int					this_is_comment_or_command(char **line);
 int					write_name_room_or_link(char *line, int *cnt, int c,\
 					char **room);

@@ -58,13 +58,13 @@ int		valid_map(t_room **head_room, t_link **head_link)
 	char 	*line;
 
 	line = NULL;
-	//g_fd = open("map", O_RDONLY);
-	g_fd = 0;
+	g_fd = open("map", O_RDONLY);
+	//g_fd = 0;
 	while (get_next_line(g_fd, &line))
 	{
 		if (!g_lem_in.ant)
 		{
-			if (!num_ants(line))
+			if (!num_ants(&line))
 				return (0);
 		}
 		if (!g_lem_in.room_completed &&!find_room(&line, head_room))
@@ -75,26 +75,6 @@ int		valid_map(t_room **head_room, t_link **head_link)
 	}
 	print_map();
 	return (1);
-}
-
-void	print_link(t_room *room)
-{
-	t_join *tmp;
-
-	while (room)
-	{
-		ft_printf("room ");
-		ft_printf(RED"[%-5s] "RESET, room->name);
-		ft_printf("linked with rooms ");
-		tmp = room->join;
-		while (tmp)
-		{
-			ft_printf(BLUE"[%s]  "RESET, tmp->room->name);
-			tmp = tmp->next;
-		}
-		room = room->next;
-		ft_printf("\n");
-	}
 }
 
 int 	main(void)
@@ -108,10 +88,8 @@ int 	main(void)
 	if (!valid_map(&head_room, &head_link))
 		return (error_mes());
 	build_links(&head_room, head_link);
-	print_link(head_room);
 	find_the_shortest_path(head_room);
 	write_the_shortest_path(head_room);
 	start_ants();
-	//while (1);
 	return (0);
 }

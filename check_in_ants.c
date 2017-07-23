@@ -30,6 +30,8 @@ int		valid_line_room(char *line)
 
 int		this_is_comment_or_command(char **line)
 {
+	if (*line == NULL)
+		return (1);
 	while (**line == '#' && *(*line + 1) != '#')
 	{
 		write_map(*line, 4);
@@ -53,23 +55,23 @@ int		this_is_comment_or_command(char **line)
 	return (1);
 }
 
-int		num_ants(char *line)
+int		num_ants(char **line)
 {
 	intmax_t	ant;
 	int			len;
 
-	if (!this_is_comment_or_command(&line))
+	if (!this_is_comment_or_command(line))
 		return (0);
-	if (!ft_isdigit(*line))
+	if (!ft_isdigit(**line))
 		return (0);
 	else
 	{
-		ant = ft_atoi_pf(line);
+		ant = ft_atoi_pf(*line);
 		len = len_value(ant);
-		if (ant > 2147483647 || ft_isprint(line[len]))
+		if (ant > 2147483647 || ft_isprint(*line[len]))
 			return (0);
-		g_lem_in.ant = ft_atoi(line);
-		write_map(line, 2);
+		g_lem_in.ant = ft_atoi(*line);
+		write_map(*line, 2);
 	}
 	return (1);
 }

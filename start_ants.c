@@ -53,8 +53,10 @@ void	value_tmp(int *tmp)
 		g_lem_in.cnt = *tmp;
 	if (*tmp >= g_lem_in.len_room || g_lem_in.cnt >= g_lem_in.len_room)
 	{
-		g_lem_in.len_room--;
-		*tmp = g_lem_in.len_room;
+		//g_lem_in.len_room--;
+		*tmp = g_end_path->ant_came + 1 >= g_lem_in.len_room ? g_lem_in.len_room - 1 : g_end_path->ant_came + 1;
+		if ((g_end_path->ant_came + g_start_path->ant_came) == g_lem_in.len_room - 1)
+			*tmp = g_lem_in.len_room - 1;
 	}
 }
 
@@ -69,7 +71,7 @@ void	start_ants(void)
 	{
 		tmp_cnt != 1 ? ft_printf("\n") : 0;
 		value_tmp(&tmp_cnt);
-		while (tmp_cnt)
+		while (tmp_cnt) //TODO придумати спосіб змешнувати вчасно каунтер
 		{
 			if (tmp->next->ant_came == g_end_path->ant_came ||
 					tmp->next->ant_came == 1)

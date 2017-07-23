@@ -48,7 +48,6 @@ t_room	*find_min_join(t_join *join, int distance)
 void	write_the_shortest_path(t_room *room)
 {
 	t_room	*tmp;
-	//t_path	*path;
 
 	tmp = room;
 	while (tmp->func_room != 2)
@@ -58,11 +57,5 @@ void	write_the_shortest_path(t_room *room)
 		tmp = find_min_join(tmp->join, tmp->distance);
 	g_end_path->ant_came = g_lem_in.ant;
 	g_lem_in.len_room = len_path();
-	/*path = g_start_path;
-	while (path)
-	{
-		ft_printf("[%s] ", path->name);
-		path = path->next;
-	}
-	ft_printf("\n");*/
+
 }

@@ -65,7 +65,6 @@ int		find_the_shortest_path(t_room *room)
 		g_lem_in.new_room = 0;
 		if (tmp->this_is == number[cnt])
 		{
-			ft_printf("room = %s - number = %i\n", tmp->name, number[cnt]);
 			write_join(number, tmp->join, tmp->distance);
 			g_lem_in.new_room = 1;
 			cnt++;

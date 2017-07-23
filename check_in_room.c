@@ -134,5 +134,5 @@ int		find_room(char **line, t_room **head)
 		}
 		ft_strdel(line);
 	}
-	return (1);
+	return (0);
 }
