@@ -81,7 +81,7 @@ void	start_ants(void)
 		tmp_cnt !=1 ? value_tmp(&tmp_cnt) : 0;
 		while (tmp_cnt) //TODO придумати спосіб змешнувати вчасно каунтер
 		{
-			if (tmp->next->ant_came == g_end_path->ant_came ||
+			if (tmp->next->ant_came == g_lem_in.ant ||
 					tmp->next->ant_came == 1)
 			{
 				tmp->next->ant_came--;
@@ -89,6 +89,7 @@ void	start_ants(void)
 				tmp_cnt--;
 				g_end_path->ant_came ? g_lem_in.cnt++ : 0;
 			}
+
 			tmp = tmp->next;
 		}
 		print_result();

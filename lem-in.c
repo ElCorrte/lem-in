@@ -59,7 +59,7 @@ int		valid_map(t_room **head_room, t_link **head_link)
 
 	line = NULL;
 	g_fd = open("map", O_RDONLY);
-	//g_fd = 0;
+//g_fd = 0;
 	while (get_next_line(g_fd, &line))
 	{
 		if (!g_lem_in.ant)
