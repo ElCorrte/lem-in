@@ -47,16 +47,24 @@ int 	len_path(void)
 
 void	value_tmp(int *tmp)
 {
-	if (*tmp == 0)
-		*tmp = g_lem_in.cnt;
-	else if (*tmp > 0)
-		g_lem_in.cnt = *tmp;
-	if (*tmp >= g_lem_in.len_room || g_lem_in.cnt >= g_lem_in.len_room)
+	if (g_end_path->ant_came)
 	{
-		//g_lem_in.len_room--;
-		*tmp = g_end_path->ant_came + 1 >= g_lem_in.len_room ? g_lem_in.len_room - 1 : g_end_path->ant_came + 1;
-		if ((g_end_path->ant_came + g_start_path->ant_came) == g_lem_in.len_room - 1)
-			*tmp = g_lem_in.len_room - 1;
+		*tmp = g_lem_in.cnt >= g_lem_in.len_room - 1 ? g_lem_in.cnt : g_lem_in.cnt + 1;
+		g_lem_in.cnt = 0;
+	}
+	else
+	{
+		if (g_lem_in.ant == 1)
+		{
+			*tmp = g_start_path->ant_came != g_lem_in.ant ? 1 : 0;
+			return ;
+		}
+		if (g_lem_in.ant < g_lem_in.len_room - 1)
+		{
+			*tmp = g_start_path->ant_came != g_lem_in.ant - 1 ? g_lem_in.ant : g_lem_in.ant - 1;
+			return ;
+		}
+		*tmp = g_lem_in.cnt--;
 	}
 }
 
@@ -69,8 +77,8 @@ void	start_ants(void)
 	tmp_cnt = 1;
 	while (g_start_path->ant_came != g_lem_in.ant)
 	{
-		tmp_cnt != 1 ? ft_printf("\n") : 0;
-		value_tmp(&tmp_cnt);
+		ft_printf("\n");
+		tmp_cnt !=1 ? value_tmp(&tmp_cnt) : 0;
 		while (tmp_cnt) //TODO придумати спосіб змешнувати вчасно каунтер
 		{
 			if (tmp->next->ant_came == g_end_path->ant_came ||
@@ -79,7 +87,7 @@ void	start_ants(void)
 				tmp->next->ant_came--;
 				tmp->ant_came++;
 				tmp_cnt--;
-				g_lem_in.cnt++;
+				g_end_path->ant_came ? g_lem_in.cnt++ : 0;
 			}
 			tmp = tmp->next;
 		}

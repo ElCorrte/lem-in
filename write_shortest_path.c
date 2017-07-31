@@ -57,5 +57,5 @@ void	write_the_shortest_path(t_room *room)
 		tmp = find_min_join(tmp->join, tmp->distance);
 	g_end_path->ant_came = g_lem_in.ant;
 	g_lem_in.len_room = len_path();
-
+	g_lem_in.cnt = 0;
 }
