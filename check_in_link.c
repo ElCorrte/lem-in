@@ -28,8 +28,11 @@ int		maybe_link(char *line)
 	}
 	if (dash > 1)
 		return (0);
-	else if (dash == 1)
+	if (dash == 1)
+	{
+		g_lem_in.room_completed = 1;
 		return (1);
+	}
 	return (0);
 }
 

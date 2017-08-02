@@ -117,7 +117,6 @@ int		find_room(char **line, t_room **head)
 		{
 			if (g_lem_in.start_cnt != 1 || g_lem_in.end_cnt != 1)
 				return (0);
-			g_lem_in.room_completed = 1;
 			return (1);
 		}
 		if (!this_is_comment_or_command(line))
@@ -132,6 +131,8 @@ int		find_room(char **line, t_room **head)
 			if (!create_start_or_end(line, head))
 				return (0);
 		}
+		else
+			return (0);
 		ft_strdel(line);
 	}
 	return (0);

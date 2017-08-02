@@ -60,8 +60,19 @@ int		build_links(t_room **room, t_link *link)
 			tmp_l = tmp_l->next;
 		}
 		tmp_l = link;
-		*room = (*room)->next;
+		(*room) = (*room)->next;
 	}
-	*room = tmp_start;
+	(*room) = tmp_start;
+	/*while (tmp_start)
+	{
+		ft_printf("room %s ", tmp_start->name);
+		while (tmp_start->join)
+		{
+			ft_printf(" link %s ", tmp_start->join->room->name);
+			tmp_start->join = tmp_start->join->next;
+		}
+		ft_printf("\n");
+		tmp_start = tmp_start->next;
+	}*/
 	return (0);
 }

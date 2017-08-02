@@ -73,7 +73,6 @@ int		valid_map(t_room **head_room, t_link **head_link)
 			return (0);
 		line ? ft_strdel(&line) : 0;
 	}
-	print_map();
 	return (1);
 }
 
@@ -90,6 +89,7 @@ int 	main(void)
 	build_links(&head_room, head_link);
 	find_the_shortest_path(head_room);
 	write_the_shortest_path(head_room);
+	print_map();
 	start_ants();
 	return (0);
 }

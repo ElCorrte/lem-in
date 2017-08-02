@@ -54,7 +54,20 @@ void	write_the_shortest_path(t_room *room)
 		tmp = tmp->next;
 	create_path(tmp->name);
 	while (tmp->next != NULL)
-		tmp = find_min_join(tmp->join, tmp->distance);
+	{
+		if (tmp->join)
+		{
+			tmp = find_min_join(tmp->join, tmp->distance);
+			if (tmp == NULL && ft_printf(RED"ERROR\n"RESET))
+				exit(0);
+		}
+		else
+		{
+			ft_printf(RED"ERROR\n"RESET);
+			exit(0);
+		}
+	}
+	ft_printf("start_room = %s\n end_room = %s\n", g_start_path->name, g_end_path->name);
 	g_end_path->ant_came = g_lem_in.ant;
 	g_lem_in.len_room = len_path();
 	g_lem_in.cnt = 0;

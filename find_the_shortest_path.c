@@ -31,6 +31,7 @@ void	write_number(int *number, t_room *room, int distance)
 
 	if (room->i_was_here == 1)
 		return ;
+	ft_printf("room %s\n", room->name);
 	room->this_is = this_is++;
 	room->i_was_here = 1;
 	room->distance = room->func_room == 1 ? 0 : (distance + 1);
