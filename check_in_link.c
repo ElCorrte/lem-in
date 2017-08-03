@@ -88,6 +88,8 @@ int		create_link(char *line, t_room *head_room, t_link **head_link)
 
 int		find_link(char **line, t_link **head_link, t_room *head_room)
 {
+    if (**line == '\0')
+        return (0);
 	if (!this_is_comment_or_command(line))
 		return (0);
 	if (!*line)

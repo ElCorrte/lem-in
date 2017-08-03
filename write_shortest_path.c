@@ -53,7 +53,7 @@ void	write_the_shortest_path(t_room *room)
 	while (tmp->func_room != 2)
 		tmp = tmp->next;
 	create_path(tmp->name);
-	while (tmp->next != NULL)
+	while (tmp->func_room != 1)
 	{
 		if (tmp->join)
 		{

@@ -68,8 +68,8 @@ int		num_ants(char **line)
 	{
 		ant = ft_atoi_pf(*line);
 		len = len_value(ant);
-		if (ant > 2147483647 || ft_isprint(*line[len]) || ant == 0)
-			return (0);
+		/*if (ant > 2147483647 || ft_isprint(*line[len]) || ant == 0)
+			return (0);*/
 		g_lem_in.ant = ft_atoi(*line);
 		write_map(*line, 2);
 	}
