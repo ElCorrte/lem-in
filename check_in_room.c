@@ -6,14 +6,16 @@
 /*   By: yzakharc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 15:12:27 by yzakharc          #+#    #+#             */
-/*   Updated: 2017/07/12 15:12:28 by yzakharc         ###   ########.fr       */
+/*   Updated: 2017/08/04 18:57:18 by yzakharc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 
 int		write_name_room_or_link(char *line, int *cnt, int c, char **room)
 {
+	if (line == NULL)
+		return (0);
 	while (ft_isprint(line[*cnt]) && line[*cnt] != c)
 		(*cnt)++;
 	*room != NULL ? ft_strdel(room) : 0;
@@ -114,12 +116,8 @@ int		find_room(char **line, t_room **head)
 	while (get_next_line(g_fd, line))
 	{
 		if (maybe_link(*line))
-		{
-			if (g_lem_in.start_cnt != 1 || g_lem_in.end_cnt != 1)
-				return (0);
 			return (1);
-		}
-		if (!this_is_comment_or_command(line))
+		if (!this_is_comment_or_command(line) || *line == NULL)
 			return (0);
 		if (ft_isprint(**line) && **line != 'L' && **line != 35 && **line != 32)
 		{

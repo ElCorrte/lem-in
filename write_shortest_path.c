@@ -6,11 +6,11 @@
 /*   By: yzakharc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/21 19:46:41 by yzakharc          #+#    #+#             */
-/*   Updated: 2017/07/21 19:46:43 by yzakharc         ###   ########.fr       */
+/*   Updated: 2017/08/04 19:11:02 by yzakharc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 
 void	create_path(char *name)
 {
@@ -67,7 +67,6 @@ void	write_the_shortest_path(t_room *room)
 			exit(0);
 		}
 	}
-	ft_printf("start_room = %s\n end_room = %s\n", g_start_path->name, g_end_path->name);
 	g_end_path->ant_came = g_lem_in.ant;
 	g_lem_in.len_room = len_path();
 	g_lem_in.cnt = 0;

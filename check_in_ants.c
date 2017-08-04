@@ -6,11 +6,11 @@
 /*   By: yzakharc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 15:15:20 by yzakharc          #+#    #+#             */
-/*   Updated: 2017/07/12 15:15:21 by yzakharc         ###   ########.fr       */
+/*   Updated: 2017/08/04 18:49:56 by yzakharc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 
 int		valid_line_room(char *line)
 {
@@ -58,7 +58,8 @@ int		this_is_comment_or_command(char **line)
 int		num_ants(char **line)
 {
 	intmax_t	ant;
-	int			len;
+	int			len_num;
+	int			len_line;
 
 	if (!this_is_comment_or_command(line))
 		return (0);
@@ -67,9 +68,10 @@ int		num_ants(char **line)
 	else
 	{
 		ant = ft_atoi_pf(*line);
-		len = len_value(ant);
-		/*if (ant > 2147483647 || ft_isprint(*line[len]) || ant == 0)
-			return (0);*/
+		len_num = len_value(ant);
+		len_line = (int)ft_strlen(*line);
+		if (ant > 2147483647 || ant == 0 || len_line != len_num)
+			return (0);
 		g_lem_in.ant = ft_atoi(*line);
 		write_map(*line, 2);
 	}

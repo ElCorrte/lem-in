@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 
 t_join	*create_new_join(t_room **head, t_room *low_room)
 {
@@ -63,16 +63,5 @@ int		build_links(t_room **room, t_link *link)
 		(*room) = (*room)->next;
 	}
 	(*room) = tmp_start;
-	/*while (tmp_start)
-	{
-		ft_printf("room %s ", tmp_start->name);
-		while (tmp_start->join)
-		{
-			ft_printf(" link %s ", tmp_start->join->room->name);
-			tmp_start->join = tmp_start->join->next;
-		}
-		ft_printf("\n");
-		tmp_start = tmp_start->next;
-	}*/
 	return (0);
 }

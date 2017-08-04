@@ -6,11 +6,11 @@
 /*   By: yzakharc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/20 16:17:22 by yzakharc          #+#    #+#             */
-/*   Updated: 2017/07/20 16:17:24 by yzakharc         ###   ########.fr       */
+/*   Updated: 2017/08/04 18:43:23 by yzakharc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 
 void	clear_struct(void)
 {

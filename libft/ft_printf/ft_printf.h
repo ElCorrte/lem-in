@@ -29,6 +29,7 @@
 # define CYAN 		"\e[96m"
 # define BLINK		"\e[5m"
 # define UNDERLINED	"\e[4m"
+# define BACKBLUE	"\e[44m"
 
 typedef struct		s_pf
 {

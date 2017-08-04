@@ -6,11 +6,11 @@
 /*   By: yzakharc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/14 13:02:05 by yzakharc          #+#    #+#             */
-/*   Updated: 2017/07/14 13:02:06 by yzakharc         ###   ########.fr       */
+/*   Updated: 2017/08/04 18:50:50 by yzakharc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 
 int		maybe_link(char *line)
 {
@@ -88,8 +88,8 @@ int		create_link(char *line, t_room *head_room, t_link **head_link)
 
 int		find_link(char **line, t_link **head_link, t_room *head_room)
 {
-    if (**line == '\0')
-        return (0);
+	if (**line == '\0')
+		return (0);
 	if (!this_is_comment_or_command(line))
 		return (0);
 	if (!*line)
