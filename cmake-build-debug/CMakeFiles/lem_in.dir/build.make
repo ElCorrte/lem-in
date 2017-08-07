@@ -177,28 +177,28 @@ CMakeFiles/lem_in.dir/find_the_shortest_path.c.o.provides: CMakeFiles/lem_in.dir
 CMakeFiles/lem_in.dir/find_the_shortest_path.c.o.provides.build: CMakeFiles/lem_in.dir/find_the_shortest_path.c.o
 
 
-CMakeFiles/lem_in.dir/lem-in.c.o: CMakeFiles/lem_in.dir/flags.make
-CMakeFiles/lem_in.dir/lem-in.c.o: ../lem-in.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/y/yzakharc/cursus_42/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/lem_in.dir/lem-in.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/lem-in.c.o   -c /nfs/2016/y/yzakharc/cursus_42/lem-in/lem-in.c
+CMakeFiles/lem_in.dir/lem_in.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/lem_in.c.o: ../lem_in.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/y/yzakharc/cursus_42/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/lem_in.dir/lem_in.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/lem_in.c.o   -c /nfs/2016/y/yzakharc/cursus_42/lem-in/lem_in.c
 
-CMakeFiles/lem_in.dir/lem-in.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/lem-in.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/y/yzakharc/cursus_42/lem-in/lem-in.c > CMakeFiles/lem_in.dir/lem-in.c.i
+CMakeFiles/lem_in.dir/lem_in.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/lem_in.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/y/yzakharc/cursus_42/lem-in/lem_in.c > CMakeFiles/lem_in.dir/lem_in.c.i
 
-CMakeFiles/lem_in.dir/lem-in.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/lem-in.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/y/yzakharc/cursus_42/lem-in/lem-in.c -o CMakeFiles/lem_in.dir/lem-in.c.s
+CMakeFiles/lem_in.dir/lem_in.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/lem_in.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/y/yzakharc/cursus_42/lem-in/lem_in.c -o CMakeFiles/lem_in.dir/lem_in.c.s
 
-CMakeFiles/lem_in.dir/lem-in.c.o.requires:
+CMakeFiles/lem_in.dir/lem_in.c.o.requires:
 
-.PHONY : CMakeFiles/lem_in.dir/lem-in.c.o.requires
+.PHONY : CMakeFiles/lem_in.dir/lem_in.c.o.requires
 
-CMakeFiles/lem_in.dir/lem-in.c.o.provides: CMakeFiles/lem_in.dir/lem-in.c.o.requires
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/lem-in.c.o.provides.build
-.PHONY : CMakeFiles/lem_in.dir/lem-in.c.o.provides
+CMakeFiles/lem_in.dir/lem_in.c.o.provides: CMakeFiles/lem_in.dir/lem_in.c.o.requires
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/lem_in.c.o.provides.build
+.PHONY : CMakeFiles/lem_in.dir/lem_in.c.o.provides
 
-CMakeFiles/lem_in.dir/lem-in.c.o.provides.build: CMakeFiles/lem_in.dir/lem-in.c.o
+CMakeFiles/lem_in.dir/lem_in.c.o.provides.build: CMakeFiles/lem_in.dir/lem_in.c.o
 
 
 CMakeFiles/lem_in.dir/start_ants.c.o: CMakeFiles/lem_in.dir/flags.make
@@ -2056,7 +2056,7 @@ lem_in_OBJECTS = \
 "CMakeFiles/lem_in.dir/check_in_link.c.o" \
 "CMakeFiles/lem_in.dir/check_in_room.c.o" \
 "CMakeFiles/lem_in.dir/find_the_shortest_path.c.o" \
-"CMakeFiles/lem_in.dir/lem-in.c.o" \
+"CMakeFiles/lem_in.dir/lem_in.c.o" \
 "CMakeFiles/lem_in.dir/start_ants.c.o" \
 "CMakeFiles/lem_in.dir/support_function.c.o" \
 "CMakeFiles/lem_in.dir/write_shortest_path.c.o" \
@@ -2143,7 +2143,7 @@ lem_in: CMakeFiles/lem_in.dir/check_in_ants.c.o
 lem_in: CMakeFiles/lem_in.dir/check_in_link.c.o
 lem_in: CMakeFiles/lem_in.dir/check_in_room.c.o
 lem_in: CMakeFiles/lem_in.dir/find_the_shortest_path.c.o
-lem_in: CMakeFiles/lem_in.dir/lem-in.c.o
+lem_in: CMakeFiles/lem_in.dir/lem_in.c.o
 lem_in: CMakeFiles/lem_in.dir/start_ants.c.o
 lem_in: CMakeFiles/lem_in.dir/support_function.c.o
 lem_in: CMakeFiles/lem_in.dir/write_shortest_path.c.o
@@ -2237,7 +2237,7 @@ CMakeFiles/lem_in.dir/requires: CMakeFiles/lem_in.dir/check_in_ants.c.o.requires
 CMakeFiles/lem_in.dir/requires: CMakeFiles/lem_in.dir/check_in_link.c.o.requires
 CMakeFiles/lem_in.dir/requires: CMakeFiles/lem_in.dir/check_in_room.c.o.requires
 CMakeFiles/lem_in.dir/requires: CMakeFiles/lem_in.dir/find_the_shortest_path.c.o.requires
-CMakeFiles/lem_in.dir/requires: CMakeFiles/lem_in.dir/lem-in.c.o.requires
+CMakeFiles/lem_in.dir/requires: CMakeFiles/lem_in.dir/lem_in.c.o.requires
 CMakeFiles/lem_in.dir/requires: CMakeFiles/lem_in.dir/start_ants.c.o.requires
 CMakeFiles/lem_in.dir/requires: CMakeFiles/lem_in.dir/support_function.c.o.requires
 CMakeFiles/lem_in.dir/requires: CMakeFiles/lem_in.dir/write_shortest_path.c.o.requires

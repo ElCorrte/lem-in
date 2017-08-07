@@ -97,10 +97,10 @@
 		<Unit filename="/nfs/2016/y/yzakharc/cursus_42/lem-in/find_the_shortest_path.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/nfs/2016/y/yzakharc/cursus_42/lem-in/lem-in.c">
+		<Unit filename="/nfs/2016/y/yzakharc/cursus_42/lem-in/lem_in.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/nfs/2016/y/yzakharc/cursus_42/lem-in/lem-in.h">
+		<Unit filename="/nfs/2016/y/yzakharc/cursus_42/lem-in/lem_in.h">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/nfs/2016/y/yzakharc/cursus_42/lem-in/libft/ft_atoi.c">

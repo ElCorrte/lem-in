@@ -29,16 +29,37 @@ t_join	*create_new_join(t_room **head, t_room *low_room)
 	return (tmp);
 }
 
+int 	check_same_link(t_room *room, char *name)
+{
+	t_join *join;
+
+	join = room->join;
+	while (join)
+	{
+		if (ft_strequ(join->room->name, name))
+			return (1);
+		join = join->next;
+	}
+	return (0);
+}
+
 void	choice_room(t_room **main_room, t_room *head_room, char *room)
 {
 	t_room *tmp;
 
+
 	tmp = head_room;
-	while (tmp)
+	if (!check_same_link(*main_room, room))
 	{
-		if (ft_strequ(tmp->name, room))
-			(*main_room)->join = create_new_join(main_room, tmp);
-		tmp = tmp->next;
+		while (tmp)
+		{
+			if (ft_strequ(tmp->name, room))
+			{
+				(*main_room)->join = create_new_join(main_room, tmp);
+				return;
+			}
+			tmp = tmp->next;
+		}
 	}
 }
 

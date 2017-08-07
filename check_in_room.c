@@ -115,10 +115,10 @@ int		find_room(char **line, t_room **head)
 	line ? ft_strdel(line) : 0;
 	while (get_next_line(g_fd, line))
 	{
-		if (maybe_link(*line))
-			return (1);
 		if (!this_is_comment_or_command(line) || *line == NULL)
 			return (0);
+		if (maybe_link(*line))
+			return (1);
 		if (ft_isprint(**line) && **line != 'L' && **line != 35 && **line != 32)
 		{
 			if (!create_room(*line, head, 0))

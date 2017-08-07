@@ -6,7 +6,7 @@
 /*   By: yzakharc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 15:15:20 by yzakharc          #+#    #+#             */
-/*   Updated: 2017/08/04 18:49:56 by yzakharc         ###   ########.fr       */
+/*   Updated: 2017/08/07 16:49:35 by yzakharc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,13 @@ int		this_is_comment_or_command(char **line)
 {
 	if (*line == NULL)
 		return (1);
-	while (**line == '#' && *(*line + 1) != '#')
+	while (**line == '#' && (!ft_strequ(*line + 2, "end") &&\
+				!ft_strequ(*line + 2, "start")))
 	{
 		write_map(*line, 4);
 		ft_strdel(line);
-		get_next_line(g_fd, line);
+		if (!get_next_line(g_fd, line))
+			return (1);
 	}
 	while (**line == '#' && *(*line + 1) == '#')
 	{

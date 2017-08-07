@@ -6,33 +6,63 @@
 
 #IncludeRegexTransform: 
 
+/nfs/2016/y/yzakharc/cursus_42/lem-in/./libft/ft_printf/ft_printf.h
+stdarg.h
+-
+unistd.h
+-
+stdint.h
+-
+stdlib.h
+-
+../libft.h
+/nfs/2016/y/yzakharc/cursus_42/lem-in/./libft/libft.h
+
+/nfs/2016/y/yzakharc/cursus_42/lem-in/./libft/get_next_line/get_next_line.h
+unistd.h
+-
+stdlib.h
+-
+../libft.h
+/nfs/2016/y/yzakharc/cursus_42/lem-in/./libft/libft.h
+
+/nfs/2016/y/yzakharc/cursus_42/lem-in/./libft/libft.h
+string.h
+-
+get_next_line/get_next_line.h
+/nfs/2016/y/yzakharc/cursus_42/lem-in/./libft/get_next_line/get_next_line.h
+ft_printf/ft_printf.h
+/nfs/2016/y/yzakharc/cursus_42/lem-in/./libft/ft_printf/ft_printf.h
+
 /nfs/2016/y/yzakharc/cursus_42/lem-in/building_links.c
-lem-in.h
-/nfs/2016/y/yzakharc/cursus_42/lem-in/lem-in.h
+lem_in.h
+/nfs/2016/y/yzakharc/cursus_42/lem-in/lem_in.h
 
 /nfs/2016/y/yzakharc/cursus_42/lem-in/check_in_ants.c
-lem-in.h
-/nfs/2016/y/yzakharc/cursus_42/lem-in/lem-in.h
+lem_in.h
+/nfs/2016/y/yzakharc/cursus_42/lem-in/lem_in.h
 
 /nfs/2016/y/yzakharc/cursus_42/lem-in/check_in_link.c
-lem-in.h
-/nfs/2016/y/yzakharc/cursus_42/lem-in/lem-in.h
+lem_in.h
+/nfs/2016/y/yzakharc/cursus_42/lem-in/lem_in.h
 
 /nfs/2016/y/yzakharc/cursus_42/lem-in/check_in_room.c
-lem-in.h
-/nfs/2016/y/yzakharc/cursus_42/lem-in/lem-in.h
+lem_in.h
+/nfs/2016/y/yzakharc/cursus_42/lem-in/lem_in.h
 
 /nfs/2016/y/yzakharc/cursus_42/lem-in/find_the_shortest_path.c
-lem-in.h
-/nfs/2016/y/yzakharc/cursus_42/lem-in/lem-in.h
+lem_in.h
+/nfs/2016/y/yzakharc/cursus_42/lem-in/lem_in.h
 
-/nfs/2016/y/yzakharc/cursus_42/lem-in/lem-in.c
-lem-in.h
-/nfs/2016/y/yzakharc/cursus_42/lem-in/lem-in.h
+/nfs/2016/y/yzakharc/cursus_42/lem-in/lem_in.c
+fcntl.h
+-
+lem_in.h
+/nfs/2016/y/yzakharc/cursus_42/lem-in/lem_in.h
 
-/nfs/2016/y/yzakharc/cursus_42/lem-in/lem-in.h
-libft/libft.h
-/nfs/2016/y/yzakharc/cursus_42/lem-in/libft/libft.h
+/nfs/2016/y/yzakharc/cursus_42/lem-in/lem_in.h
+./libft/libft.h
+/nfs/2016/y/yzakharc/cursus_42/lem-in/./libft/libft.h
 
 /nfs/2016/y/yzakharc/cursus_42/lem-in/libft/ft_atoi.c
 libft.h
@@ -375,14 +405,14 @@ ft_printf/ft_printf.h
 /nfs/2016/y/yzakharc/cursus_42/lem-in/libft/ft_printf/ft_printf.h
 
 /nfs/2016/y/yzakharc/cursus_42/lem-in/start_ants.c
-lem-in.h
-/nfs/2016/y/yzakharc/cursus_42/lem-in/lem-in.h
+lem_in.h
+/nfs/2016/y/yzakharc/cursus_42/lem-in/lem_in.h
 
 /nfs/2016/y/yzakharc/cursus_42/lem-in/support_function.c
-lem-in.h
-/nfs/2016/y/yzakharc/cursus_42/lem-in/lem-in.h
+lem_in.h
+/nfs/2016/y/yzakharc/cursus_42/lem-in/lem_in.h
 
 /nfs/2016/y/yzakharc/cursus_42/lem-in/write_shortest_path.c
-lem-in.h
-/nfs/2016/y/yzakharc/cursus_42/lem-in/lem-in.h
+lem_in.h
+/nfs/2016/y/yzakharc/cursus_42/lem-in/lem_in.h
 

@@ -258,32 +258,32 @@ find_the_shortest_path.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/find_the_shortest_path.c.s
 .PHONY : find_the_shortest_path.c.s
 
-lem-in.o: lem-in.c.o
+lem_in.o: lem_in.c.o
 
-.PHONY : lem-in.o
+.PHONY : lem_in.o
 
 # target to build an object file
-lem-in.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/lem-in.c.o
-.PHONY : lem-in.c.o
+lem_in.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/lem_in.c.o
+.PHONY : lem_in.c.o
 
-lem-in.i: lem-in.c.i
+lem_in.i: lem_in.c.i
 
-.PHONY : lem-in.i
+.PHONY : lem_in.i
 
 # target to preprocess a source file
-lem-in.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/lem-in.c.i
-.PHONY : lem-in.c.i
+lem_in.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/lem_in.c.i
+.PHONY : lem_in.c.i
 
-lem-in.s: lem-in.c.s
+lem_in.s: lem_in.c.s
 
-.PHONY : lem-in.s
+.PHONY : lem_in.s
 
 # target to generate assembly for a file
-lem-in.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/lem-in.c.s
-.PHONY : lem-in.c.s
+lem_in.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/lem_in.c.s
+.PHONY : lem_in.c.s
 
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
@@ -2388,9 +2388,9 @@ help:
 	@echo "... find_the_shortest_path.o"
 	@echo "... find_the_shortest_path.i"
 	@echo "... find_the_shortest_path.s"
-	@echo "... lem-in.o"
-	@echo "... lem-in.i"
-	@echo "... lem-in.s"
+	@echo "... lem_in.o"
+	@echo "... lem_in.i"
+	@echo "... lem_in.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"

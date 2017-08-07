@@ -9,7 +9,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/nfs/2016/y/yzakharc/cursus_42/lem-in/check_in_link.c" "/nfs/2016/y/yzakharc/cursus_42/lem-in/cmake-build-debug/CMakeFiles/lem_in.dir/check_in_link.c.o"
   "/nfs/2016/y/yzakharc/cursus_42/lem-in/check_in_room.c" "/nfs/2016/y/yzakharc/cursus_42/lem-in/cmake-build-debug/CMakeFiles/lem_in.dir/check_in_room.c.o"
   "/nfs/2016/y/yzakharc/cursus_42/lem-in/find_the_shortest_path.c" "/nfs/2016/y/yzakharc/cursus_42/lem-in/cmake-build-debug/CMakeFiles/lem_in.dir/find_the_shortest_path.c.o"
-  "/nfs/2016/y/yzakharc/cursus_42/lem-in/lem-in.c" "/nfs/2016/y/yzakharc/cursus_42/lem-in/cmake-build-debug/CMakeFiles/lem_in.dir/lem-in.c.o"
+  "/nfs/2016/y/yzakharc/cursus_42/lem-in/lem_in.c" "/nfs/2016/y/yzakharc/cursus_42/lem-in/cmake-build-debug/CMakeFiles/lem_in.dir/lem_in.c.o"
   "/nfs/2016/y/yzakharc/cursus_42/lem-in/libft/ft_atoi.c" "/nfs/2016/y/yzakharc/cursus_42/lem-in/cmake-build-debug/CMakeFiles/lem_in.dir/libft/ft_atoi.c.o"
   "/nfs/2016/y/yzakharc/cursus_42/lem-in/libft/ft_bzero.c" "/nfs/2016/y/yzakharc/cursus_42/lem-in/cmake-build-debug/CMakeFiles/lem_in.dir/libft/ft_bzero.c.o"
   "/nfs/2016/y/yzakharc/cursus_42/lem-in/libft/ft_cntwords.c" "/nfs/2016/y/yzakharc/cursus_42/lem-in/cmake-build-debug/CMakeFiles/lem_in.dir/libft/ft_cntwords.c.o"

@@ -4,7 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/check_in_link.c.o"
   "CMakeFiles/lem_in.dir/check_in_room.c.o"
   "CMakeFiles/lem_in.dir/find_the_shortest_path.c.o"
-  "CMakeFiles/lem_in.dir/lem-in.c.o"
+  "CMakeFiles/lem_in.dir/lem_in.c.o"
   "CMakeFiles/lem_in.dir/start_ants.c.o"
   "CMakeFiles/lem_in.dir/support_function.c.o"
   "CMakeFiles/lem_in.dir/write_shortest_path.c.o"
