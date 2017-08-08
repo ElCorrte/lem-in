@@ -37,7 +37,6 @@ void	print_result(t_path *tmp)
 		}
 		tmp = tmp->next;
 	}
-	g_lem_in.len_room != 2 ? write(1, "\n", 1) : 0; //TODO забрати останій \n
 }
 
 int		len_path(void)
@@ -91,10 +90,10 @@ void	start_ants(int ant)
 	{
 		tmp_cnt != 1 ? value_tmp(&tmp_cnt) : 0;
 		g_lem_in.cnt_print_ant = tmp_cnt;
+		g_lem_in.len_room != 2 ? write(1, "\n", 1) : 0;
 		while (tmp_cnt)
 		{
-			if (tmp->next->ant_came == ant ||
-					tmp->next->ant_came == 1)
+			if (tmp->next->ant_came == ant || tmp->next->ant_came == 1)
 			{
 				tmp->next->ant_came--;
 				tmp->ant_came++;
