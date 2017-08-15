@@ -72,5 +72,6 @@ int		find_the_shortest_path(t_room *room)
 		tmp = tmp->next;
 		g_lem_in.new_room == 1 ? tmp = room : 0;
 	}
+	free(number);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: yzakharc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/20 16:49:21 by yzakharc          #+#    #+#             */
-/*   Updated: 2017/07/20 16:49:22 by yzakharc         ###   ########.fr       */
+/*   Updated: 2017/08/12 18:03:51 by yzakharc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_join	*create_new_join(t_room **head, t_room *low_room)
 	return (tmp);
 }
 
-int 	check_same_link(t_room *room, char *name)
+int		check_same_link(t_room *room, char *name)
 {
 	t_join *join;
 
@@ -47,7 +47,6 @@ void	choice_room(t_room **main_room, t_room *head_room, char *room)
 {
 	t_room *tmp;
 
-
 	tmp = head_room;
 	if (!check_same_link(*main_room, room))
 	{
@@ -56,7 +55,7 @@ void	choice_room(t_room **main_room, t_room *head_room, char *room)
 			if (ft_strequ(tmp->name, room))
 			{
 				(*main_room)->join = create_new_join(main_room, tmp);
-				return;
+				return ;
 			}
 			tmp = tmp->next;
 		}

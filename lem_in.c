@@ -6,11 +6,10 @@
 /*   By: yzakharc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 19:23:26 by yzakharc          #+#    #+#             */
-/*   Updated: 2017/08/04 19:49:21 by yzakharc         ###   ########.fr       */
+/*   Updated: 2017/08/12 17:58:01 by yzakharc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fcntl.h>
 #include "lem_in.h"
 
 int		error_mes(void)
@@ -57,8 +56,7 @@ int		valid_map(t_room **head_room, t_link **head_link)
 	char	*line;
 
 	line = NULL;
-	g_fd = open("test", O_RDONLY);
-	//g_fd = 0;
+	g_fd = 0;
 	while (get_next_line(g_fd, &line))
 	{
 		if (!g_lem_in.ant)

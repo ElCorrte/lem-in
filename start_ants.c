@@ -6,7 +6,7 @@
 /*   By: yzakharc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 11:43:52 by yzakharc          #+#    #+#             */
-/*   Updated: 2017/08/07 19:28:25 by yzakharc         ###   ########.fr       */
+/*   Updated: 2017/08/12 18:05:48 by yzakharc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ void	value_tmp(int *tmp)
 {
 	if (g_end_path->ant_came)
 	{
-		*tmp = g_lem_in.cnt >= g_lem_in.len_room - 1 ?\
-			   g_lem_in.cnt : g_lem_in.cnt + 1;
+		*tmp = g_lem_in.cnt >= g_lem_in.len_room - 1 ?
+			g_lem_in.cnt : g_lem_in.cnt + 1;
 		g_lem_in.cnt = 0;
 	}
 	else
@@ -71,8 +71,8 @@ void	value_tmp(int *tmp)
 		}
 		if (g_lem_in.ant < g_lem_in.len_room - 1)
 		{
-			*tmp = g_start_path->ant_came != g_lem_in.ant - 1 ?\
-				   g_lem_in.ant : g_lem_in.ant - 1;
+			*tmp = g_start_path->ant_came != g_lem_in.ant - 1 ?
+				g_lem_in.ant : g_lem_in.ant - 1;
 			return ;
 		}
 		*tmp = g_lem_in.cnt--;

@@ -6,7 +6,7 @@
 /*   By: yzakharc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 19:25:21 by yzakharc          #+#    #+#             */
-/*   Updated: 2017/08/04 19:25:36 by yzakharc         ###   ########.fr       */
+/*   Updated: 2017/08/12 18:06:38 by yzakharc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ typedef struct		s_lem
 	int				room_completed;
 	int				new_room;
 	int				len_room;
-	int 			cnt_print_ant;
+	int				cnt_print_ant;
 }					t_lem;
 
 t_lem				g_lem_in;
